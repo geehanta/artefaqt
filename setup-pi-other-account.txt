@@ -1,0 +1,55 @@
+SETTING UP PI IN ANOTHER CODESPACE WITH THE SAME OPENROUTER KEY
+===================================================================
+
+Step 1: In THIS Codespace - Get your current API key
+-----------------------------------------------------
+Run this command:
+    echo $OPENROUTER_API_KEY
+
+Copy the output (it will start with: sk-or-v1-...)
+
+
+Step 2: In your OTHER GitHub account - Create a new Codespace
+--------------------------------------------------------------
+- Open your repository in the other account
+- Create a new Codespace
+
+
+Step 3: In the NEW Codespace - Install Pi
+------------------------------------------
+Run:
+    npm install -g @earendil-works/pi-coding-agent
+
+
+Step 4: Set the OpenRouter API key
+-----------------------------------
+Run (replace with your actual key from Step 1):
+    export OPENROUTER_API_KEY="sk-or-v1-your_actual_key_here"
+
+
+Step 5: Make it permanent (persists when you restart the Codespace)
+--------------------------------------------------------------------
+Run (replace with your actual key from Step 1):
+    echo 'export OPENROUTER_API_KEY="sk-or-v1-your_actual_key_here"' >> ~/.bashrc
+
+
+Step 6: Verify it's set
+-----------------------
+Run:
+    echo $OPENROUTER_API_KEY
+
+You should see your key printed out.
+
+
+Step 7: Start Pi
+----------------
+Run:
+    pi
+
+
+NOTES:
+------
+- OpenRouter API keys are tied to an OpenRouter account, not a GitHub account
+- You can use the same OpenRouter key in multiple Codespaces/machines
+- All usage will bill to the same OpenRouter account
+- The key persists in ~/.bashrc so you don't need to set it again after restarting
