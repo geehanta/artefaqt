@@ -31,6 +31,11 @@ Step 5: Make it permanent (persists when you restart the Codespace)
 --------------------------------------------------------------------
 Run (replace with your actual key from Step 1):
     echo 'export OPENROUTER_API_KEY="sk-or-v1-your_actual_key_here"' >> ~/.bashrc
+    echo 'export PI_PROVIDER="openrouter"' >> ~/.bashrc
+    echo 'export PI_MODEL="anthropic/claude-sonnet-4.5"' >> ~/.bashrc
+
+Then reload:
+    source ~/.bashrc
 
 
 Step 6: Verify it's set
@@ -45,6 +50,9 @@ Step 7: Start Pi
 ----------------
 Run:
     pi
+
+OR start with explicit model (if Step 5 didn't work):
+    pi --provider openrouter --model anthropic/claude-sonnet-4.5
 
 
 NOTES:
